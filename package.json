@@ -1,0 +1,20 @@
+{
+	"name": "@remato/open-pull-request-action",
+	"version": "1.0.0",
+	"license": "MIT",
+	"description": "GitHub Action to open pull request and return it's id if request is mergeable, otherwise throw error to stop the flow",
+	"main": "dist/index.js",
+	"scripts": {
+		"build": "tsc index.ts --outDir dist",
+		"prettier:fix": "prettier --write ."
+	},
+	"dependencies": {
+		"@actions/core": "^1.2.7",
+		"@octokit/core": "^3.5.1"
+	},
+	"devDependencies": {
+		"@remato/prettier-config": "^1.0.0",
+		"@types/node": "^16.11.13",
+		"prettier": "2.5.1"
+	}
+}

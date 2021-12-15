@@ -1,0 +1,24 @@
+author: Remato
+name: open-pull-request
+description: GitHub Action to open pull request and return it's id if request is mergeable, otherwise throw error to stop the flow
+branding:
+    color: yellow
+    icon: anchor
+inputs:
+    github-token:
+        description: Github token, https://docs.github.com/en/actions/reference/authentication-in-a-workflow
+        required: true
+    from-branch:
+        description: head branch
+        required: true
+    to-branch:
+        description: base branch
+        required: true
+    repository-owner:
+        required: true
+    repository:
+        required: true
+
+runs:
+    using: node12
+    main: 'dist/index.js'
