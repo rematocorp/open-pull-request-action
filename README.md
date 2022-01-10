@@ -6,9 +6,6 @@ Now maximum time to wait for PR state is 3 sec.
 
 ```yaml
 name: Open pull request and echo its number
-on:
-  push:
-    branches: ["change_this"]
 jobs:
   example:
     runs-on: ubuntu-latest
@@ -24,6 +21,6 @@ jobs:
           repository: change_this
           
       - name: Echo mergeable PR number
-        run: echo "${{ join(steps.open_pr.outputs.*, '') }}"
+        run: echo ${{ steps.open_pr.outputs.pull_number }}
     
 ```
